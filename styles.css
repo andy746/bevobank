@@ -2,11 +2,23 @@ body {
     font-family: 'Verdana', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(45deg, #52ab98, #c8d8e4);
+    background: white;
     color: #333;
     transition: background-color 0.5s;
 }
-
+header {
+    padding: 10px;
+    text-align: left;
+    background: #e08d3c;
+    color: white;
+    font-size: 15px;
+}
+header nav{
+    padding: 10px;
+    text-align: right;
+    color: white;
+    font-size: 10px;
+}
 /*COMMENTS*/
 /*#2b6777*/
 /*c8d8e4*/
