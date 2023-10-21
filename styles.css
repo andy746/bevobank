@@ -19,8 +19,13 @@ header nav{
     color: white;
     font-size: 10px;
 }
+
 #pageTitle {
     padding: 10px;
+    text-align: left;
+}
+.calculators {
+    margin-left: 10px;
     text-align: left;
 }
 .menu{
