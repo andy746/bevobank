@@ -17,24 +17,24 @@
             n = document.forms["input_form"]["num"].value;
             
             if (n == "" || n == null) {
-                Simple = True
+                Simple = true;
             }
             else {
-                Simple = False
+                Simple = false;
             }
             if (p <= 0 || r <= 0 || t <= 0 || n <= 0) {
-                outputText = "Please enter only positive numbers! If you wish to calculate simple interest, leave the Times Compounded field blank."
+                outputText = "Please enter only positive numbers! If you wish to calculate simple interest, leave the Times Compounded field blank.";
             }
 
-            if (Simple == True) {
-                ans = p*r*t
-                diff = ans - p
-                outputText = "You will have $" + ans + ". You gained $" + diff + "from interest!"
+            if (Simple == true) {
+                ans = p*r*t;
+                diff = ans - p;
+                outputText = "You will have $" + ans + ". You gained $" + diff + "from interest!";
             }
             else {
-                ans = p*(1+(r/n))**(n*t)
-                diff = ans - p
-                outputText = "You will have $" + ans + ". You gained $" + diff + "from interest!"
+                ans = p*(1+(r/n))**(n*t);
+                diff = ans - p;
+                outputText = "You will have $" + ans + ". You gained $" + diff + "from interest!";
             }
             document.getElementById("output").innerHTML = outputText
         }
