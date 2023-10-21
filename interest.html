@@ -27,7 +27,7 @@
             }
 
             if (Simple == true) {
-                ans = Number(p*r*t + p);
+                ans = ParseInt(p*r*t) + ParseInt(p);
                 diff = ans - p;
                 outputText = "You will have $" + ans + ". You gained $" + diff + " from interest!";
             }
