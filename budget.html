@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>BevoBank</title>
+    <script type="text/javascript">
+        var a;
+        var output;
+
+        function calculate() {
+
+        }
+    </script>
 </head>
 <body>
 	<header>
@@ -13,12 +21,21 @@
             <a href="./index.html">
                 <button style="background-color: white; color: black;">Home</button>
             </a>
+            <a href="./services.html">
+                <button style="background-color: white; color: black;">Services</button>
+            </a>
             <a href="./contact.html">
                 <button style="background-color: white; color: black;">Contact</button>
             </a>
         </nav>
 	</header>
 	<h2 id="pageTitle">Budget Calculator</h2>
-    
+    <!-- Make form that asks for their monthly income after-tax income
+        then ask for their needs, wants, and savings and calculate if they are under or over budget-->
+    <!-- Compare this to 50/30/20 rule calculator as how they should manage their money -->
+    <form name="input_form" action="javascript:calculate();">
+        Monthly After-tax Income: $<input type="text" name="num" required>
+        <input type="submit" value="Calculate">
+    </form>
 </body>
 </html>
