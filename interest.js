@@ -12,6 +12,6 @@ function interestCalculation(p, r, t, n = -1) {
         return p*r*t
     }
     else {
-        return P*(1+(r/n))**(n*t)
+        return p*(1+(r/n))**(n*t)
     }
 }
