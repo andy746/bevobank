@@ -13,22 +13,31 @@ header {
     color: white;
     font-size: 15px;
 }
-header nav{
-    padding: 10px;
-    text-align: right;
-    color: white;
-    font-size: 10px;
+button{
+    height: 30px;
+    background-color:#e08d3c;
+    border: block;
+    border-radius: 10px;
+    display: block;
+    margin-left:10px;
+    margin-top:auto;
+    margin-bottom:bottom;
+    font-family: 'Verdana', sans-serif;
 }
-<<<<<<< Updated upstream
+
 #pageTitle {
     padding: 10px;
     text-align: left;
-=======
+}
+.calculators {
+    margin-left: 10px;
+    text-align: left;
+}
 .menu{
     display: block;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
->>>>>>> Stashed changes
 }
 /*COMMENTS*/
 /*#2b6777*/
