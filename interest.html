@@ -7,12 +7,15 @@
     <title>BevoBank</title>
     <script type="text/javascript">
         var p, r, t, n;
-
+        var ans;
+        var diff;
+        var Simple;
         function interestCalculation() {
             p = document.forms["input_form"]["principal"].value;
             r = document.forms["input_form"]["rate"].value;
             t = document.forms["input_form"]["time"].value;
             n = document.forms["input_form"]["num"].value;
+            
             if (n == "" || n == null) {
                 Simple = True
             }
