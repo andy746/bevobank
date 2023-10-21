@@ -5,11 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>BevoBank</title>
+    <script type="text/javascript">
+        var p, r, t, n;
+
+        function interestCalculation() {
+            p = document.forms["input_form"]["principal"].value;
+            r = document.forms["input_form"]["rate"].value;
+            t = document.forms["input_form"]["time"].value;
+            n = document.forms["input_form"]["num"].value;
+            if (n == "" || n == null) {
+                Simple = True
+            }
+            else {
+                Simple = False
+            }
+            if (p <= 0 || r <= 0 || t <= 0 || n <= 0) {
+                outputText = "Please enter only positive numbers! If you wish to calculate simple interest, leave the Times Compounded field blank."
+            }
+
+            if (Simple == True) {
+                ans = p*r*t
+                diff = ans - p
+                outputText = "You will have $" + ans + ". You gained $" + diff + "from interest!"
+            }
+            else {
+                ans = p*(1+(r/n))**(n*t)
+                diff = ans - p
+                outputText = "You will have $" + ans + ". You gained $" + diff + "from interest!"
+            }
+            document.getElementById("output").innerHTML = outputText
+        }
+    </script>
 </head>
 <body>
 	<header>
 		<h1>BevoBank</h1>
-		<nav>
+		<div class="buttons">
             <a href="./index.html">
                 <button style="background-color: white; color: black;">Home</button>
             </a>
@@ -19,18 +50,19 @@
             <a href="./contact.html">
                 <button style="background-color: white; color: black;">Contact</button>
             </a>
-        </nav>
+        </div>
 	</header>
 	<h2 id="pageTitle">Interest Calculator</h2>
-    <form action="/interest.js">
-        <label for="principal">Principal: $</label>
-        <input type="text" id="principal" name="principal"><br><br>
-        <label for="rate">Interest Rate: %</label>
-        <input type="text" id="rate" name="rate"><br><br>
-        <label for="time">Time (Years):</label>
-        <input type="text" id="time" name="time"><br><br>
-        <label for="num">Number of Times Compounded (Optional):</label>
-        <input type="text" id="num" name="num"><br><br>
+    <form name="input_form" action="javascript:interestCalculation();">
+        Principal: $<input type="text" name="principal" required>
+        Rate: %<input type="text" name="rate" required>
+        Time (Years): <input type="text" name="time" required>
+        Times Compounded (Optional): <input type="text" name="num">
+        <br><br>
+        <input type="submit" value="Calculate">
     </form>
+
+    <p id="output"/>
+
 </body>
 </html>
