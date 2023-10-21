@@ -15,7 +15,7 @@
             r = document.forms["input_form"]["rate"].value;
             t = document.forms["input_form"]["time"].value;
             n = document.forms["input_form"]["num"].value;
-            
+            r = r / 100;
             if (n == "" || n == null) {
                 Simple = true;
             }
@@ -29,9 +29,9 @@
             if (Simple == true) {
                 ans = p*r*t;
                 diff = ans - p;
-                outputText = "You will have $" + ans + ". You gained $" + diff + "from interest!";
+                outputText = "You will have $" + ans + ". You gained $" + diff + " from interest!";
             }
-            else {
+            else {  
                 ans = p*(1+(r/n))**(n*t);
                 diff = ans - p;
                 outputText = "You will have $" + ans + ". You gained $" + diff + "from interest!";
