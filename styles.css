@@ -34,7 +34,10 @@ button {
 .buttons {
     display: flex;
 }
-
+h2 {
+    text-align: center;
+    padding: 10px;
+}
 #pageTitle {
     padding: 10px;
     text-align: left;
