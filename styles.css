@@ -13,16 +13,24 @@ header {
     color: white;
     font-size: 15px;
 }
-button{
+
+ul {
+    list-style-type: none;
+}
+button {
     height: 30px;
-    background-color:#e08d3c;
-    border: block;
+    border: 0px;
     border-radius: 10px;
     display: block;
-    margin-left:10px;
-    margin-top:auto;
-    margin-bottom:bottom;
-    font-family: 'Verdana', sans-serif;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: black;
+    font-family: "Verdana";
+}
+
+.buttons {
+    display: flex;
 }
 
 #pageTitle {
