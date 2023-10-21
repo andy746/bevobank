@@ -1,0 +1,8 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #FFC0CB, #87CEFA);
+    color: #333;
+    transition: background-color 0.5s;
+}
