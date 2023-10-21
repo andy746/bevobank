@@ -14,9 +14,6 @@ header {
     font-size: 15px;
 }
 
-ul {
-    list-style-type: none;
-}
 button {
     height: 30px;
     border: 0px;
@@ -27,6 +24,11 @@ button {
     margin-bottom: auto;
     color: black;
     font-family: "Verdana";
+}
+
+.buttons a{
+    text-decoration: none;
+    color: black;
 }
 
 .buttons {
