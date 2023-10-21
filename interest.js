@@ -4,8 +4,8 @@ var time = document.getElementById("time");
 var num = document.getElementById("num");
 
 var button = 
-document.getElementById("my-button");
-button.addEventListener("click", interestCalculation);
+document.getElementById("calculate");
+button.addEventListener("click", interestCalculation(principal, rate, time, num));
 
 
 function interestCalculation(p, r, t, n = -1) {
