@@ -1,3 +1,13 @@
+var principal = document.getElementById("principal");
+var rate = document.getElementById("rate");
+var time = document.getElementById("time");
+var num = document.getElementById("num");
+
+var button = 
+document.getElementById("my-button");
+button.addEventListener("click", interestCalculation);
+
+
 function interestCalculation(p, r, t, n = -1) {
     Simple = True
     if (n!=-1 && n > 0) {

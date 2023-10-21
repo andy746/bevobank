@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>BevoBank</title>
+</head>
+<body>
+	<header>
+		<h1>BevoBank</h1>
+		<nav>
+            <a href="./index.html">
+                <button style="background-color: white; color: black;">Home</button>
+            </a>
+            <a href="./contact.html">
+                <button style="background-color: white; color: black;">Contact</button>
+            </a>
+        </nav>
+	</header>
+	<h2 id="pageTitle">Interest Calculator</h2>
+    <form action="/interest.js">
+        <label for="principal">Principal: $</label>
+        <input type="text" id="principal" name="principal"><br><br>
+        <label for="rate">Interest Rate: %</label>
+        <input type="text" id="rate" name="rate"><br><br>
+        <label for="time">Time (Years):</label>
+        <input type="text" id="time" name="time"><br><br>
+        <label for="num">Number of Times Compounded (Optional):</label>
+        <input type="text" id="num" name="num"><br><br>
+    </form>
+</body>
+</html>
