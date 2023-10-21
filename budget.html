@@ -14,14 +14,19 @@
         function calculate() {
             a = document.forms["input_form"]["num"].value;
             if (a < 0) {
-                output = "Income cannot be negative!"
+                outputN = "Please enter a nonnegative number."
+                outputW = ""
+                outputS = ""
             } else {
                 var N = a / 2;
+                var N1 = N.toFixed(2);
                 var W = a * 0.3;
+                var W1 = W.toFixed(2);
                 var S = a * 0.2;
-                outputN = "Needs Budget: " + N;
-                outputW = "Wants Budget: " + W;
-                outputS = "Savings Budget: " + S;
+                var S1 = S.toFixed(2);
+                outputN = "Needs Budget: " + N1;
+                outputW = "Wants Budget: " + W1;
+                outputS = "Savings Budget: " + S1;
             }
 
             document.getElementById("output_needs").innerHTML = outputN
