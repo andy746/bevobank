@@ -24,12 +24,18 @@ button{
     margin-bottom:bottom;
     font-family: 'Verdana', sans-serif;
 }
+
 #pageTitle {
     padding: 10px;
     text-align: left;
 }
+.calculators {
+    margin-left: 10px;
+    text-align: left;
+}
 .menu{
     display: block;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
 }
