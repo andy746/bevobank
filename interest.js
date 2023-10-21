@@ -5,7 +5,7 @@ var num = document.getElementById("num");
 
 var button = 
 document.getElementById("calculate");
-button.addEventListener("click", interestCalculation(principal, rate, time, num));
+button.addEventListener("click", document.write(interestCalculation(principal, rate, time, num)));
 
 
 function interestCalculation(p, r, t, n = -1) {
