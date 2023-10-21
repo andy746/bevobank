@@ -19,10 +19,6 @@
             else {
                 Simple = False
             }
-
-
-
-
             if (p <= 0 || r <= 0 || t <= 0 || n <= 0) {
                 outputText = "Please enter only positive numbers! If you wish to calculate simple interest, leave the Times Compounded field blank."
             }
@@ -37,6 +33,7 @@
                 diff = ans - p
                 outputText = "You will have $" + ans + ". You gained $" + diff + "from interest!"
             }
+            document.getElementById("output").innerHTML = outputText
         }
     </script>
 </head>
@@ -65,8 +62,7 @@
         <input type="submit" value="Calculate">
     </form>
 
-    <p id="output">
+    <p id="output"/>
 
-    </p>
 </body>
 </html>
