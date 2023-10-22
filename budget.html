@@ -30,9 +30,10 @@
                 outputS = ""
             } else {
                 if ((parseInt(a)-cost) < 0) {
-
+                    document.getElementById("output_calc").style.color= 'red';
                     outputCalc = "You are overbudget by $" + (parseInt(a)-cost)*-1;
                 } else {
+                    document.getElementById("output_calc").style.color= 'green';
                     outputCalc = "You are within budget."
                 }
                 var N = a / 2;
