@@ -16,25 +16,26 @@
             t = document.forms["input_form"]["time"].value;
             n = document.forms["input_form"]["num"].value;
             r = r / 100;
+            
             if (n == "" || n == null) {
                 Simple = true;
             }
             else {
                 Simple = false;
             }
-            if (p <= 0 || r <= 0 || t <= 0 || n <= 0) {
+            if (parseInt(p) < 0 || parseInt(r) < 0 || parseInt(t) < 0 || parseInt(n) < 0) {
                 outputText = "Please enter only positive numbers! If you wish to calculate simple interest, leave the Times Compounded field blank.";
             }
 
             if (Simple == true) {
-                ans = ParseInt(p*r*t) + ParseInt(p);
+                ans = p*r*t + parseInt(p);
                 diff = ans - p;
-                outputText = "You will have $" + ans + ". You gained $" + diff + " from interest!";
+                outputText = "You will have $" + ans.toFixed(2) + ". You gained $" + diff.toFixed(2) + " from interest!";
             }
             else {  
                 ans = p*(1+(r/n))**(n*t);
                 diff = ans - p;
-                outputText = "You will have $" + ans + ". You gained $" + diff + "from interest!";
+                outputText = "You will have $" + ans.toFixed(2) + ". You gained $" + diff.toFixed(2) + " from interest!";
             }
             document.getElementById("output").innerHTML = outputText
         }
