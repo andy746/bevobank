@@ -16,6 +16,22 @@
         var outputW;
         var outputS;
 
+        function resetForm(button) {
+            if (button.value == "Reset") {
+                outputCalc = ""
+                outputRec = ""
+                outputN = ""
+                outputW = ""
+                outputS = ""
+            }
+            document.getElementById("output_calc").innerHTML = outputCalc
+            document.getElementById("output_rec").innerHTML = outputRec
+            document.getElementById("output_needs").innerHTML = outputN
+            document.getElementById("output_wants").innerHTML = outputW
+            document.getElementById("output_savings").innerHTML = outputS
+        }
+
+
         function calculate() {
             a = document.forms["input_form"]["num1"].value;
             b = document.forms["input_form"]["num2"].value;
@@ -85,6 +101,7 @@
         <pre>Monthly Savings:          $<input type="number" name="num4" required></pre>
         
         <input type="submit" value="Calculate">
+        <input type="reset" value="Reset" onclick="resetForm(this)">
     </form>
     <p id="output_calc"/>
     <p id="output_rec"/>
