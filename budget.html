@@ -7,6 +7,11 @@
     <title>BevoBank</title>
     <script type="text/javascript">
         var a;
+        var b;
+        var c;
+        var d;
+        var outputCalc;
+        var outputRec;
         var outputN;
         var outputW;
         var outputS;
@@ -15,22 +20,32 @@
             a = document.forms["input_form"]["num1"].value;
             b = document.forms["input_form"]["num2"].value;
             c = document.forms["input_form"]["num3"].value;
-            if (a < 0 || b < 0 || c < 0)  {
+            d = document.forms["input_form"]["num4"].value;
+            var cost = parseInt(b)+parseInt(c)+parseInt(d);
+            if (a < 0 || b < 0 || c < 0 || d < 0)  {
                 outputN = "Please ensure all numbers are nonnegative."
                 outputW = ""
                 outputS = ""
             } else {
+                if ((parseInt(a)-cost) < 0) {
+
+                    outputCalc = "You are overbudget by $" + (parseInt(a)-cost)*-1;
+                } else {
+                    outputCalc = "You are within budget."
+                }
                 var N = a / 2;
                 var N1 = N.toFixed(2);
                 var W = a * 0.3;
                 var W1 = W.toFixed(2);
                 var S = a * 0.2;
                 var S1 = S.toFixed(2);
-                outputN = "Needs Budget: " + N1;
-                outputW = "Wants Budget: " + W1;
-                outputS = "Savings Budget: " + S1;
+                outputRec = "Recommended Budget Plan"
+                outputN = "Needs Budget: $" + N1;
+                outputW = "Wants Budget: $" + W1;
+                outputS = "Savings Budget: $" + S1;
             }
-
+            document.getElementById("output_calc").innerHTML = outputCalc
+            document.getElementById("output_rec").innerHTML = outputRec
             document.getElementById("output_needs").innerHTML = outputN
             document.getElementById("output_wants").innerHTML = outputW
             document.getElementById("output_savings").innerHTML = outputS
@@ -40,7 +55,7 @@
 <body>
 	<header>
 		<h1>BevoBank</h1>
-		<nav>
+		<div class="buttons">
             <a href="./index.html">
                 <button style="background-color: white; color: black;">Home</button>
             </a>
@@ -50,19 +65,25 @@
             <a href="./contact.html">
                 <button style="background-color: white; color: black;">Contact</button>
             </a>
-        </nav>
+        </div>
 	</header>
 	<h2 id="pageTitle">Budget Calculator</h2>
     <!-- Make form that asks for their monthly income after-tax income
         then ask for their needs, wants, and savings and calculate if they are under or over budget-->
     <!-- Compare this to 50/30/20 rule calculator as how they should manage their money -->
-    <!-- I need to make a inequality calculator for 3 values entered to check if they are in budget or not -->
+    <!-- I need to make a inequality calculator for 4 values entered to check if they are in budget or not -->
     <form name="input_form" action="javascript:calculate();">
         Monthly After-tax Income: $<input type="number" name="num1" required>
-        Monthly Cost of Wants: $<input type="number" name="num2" required>
-        Monthly Savings: $<input type="number" name="num3" required>
+        <br>
+        Monthly Cost of Needs: $<input type="number" name="num2" required>
+        <br>
+        Monthly Cost of Wants: $<input type="number" name="num3" required>
+        <br>
+        Monthly Savings: $<input type="number" name="num4" required>
         <input type="submit" value="Calculate">
     </form>
+    <p id="output_calc"/>
+    <p id="output_rec"/>
     <p id="output_needs"/>
     <p id="output_wants"/>
     <p id="output_savings"/>
