@@ -11,6 +11,12 @@
         var diff;
         var Simple;
         var mc;
+        function resetForm(button) {
+            if (button.value == "Reset") { 
+                outputText = ""
+            }
+            document.getElementById("output").innerHTML = outputText
+        }
         function interestCalculation() {
             p = document.forms["input_form"]["principal"].value;
             r = document.forms["input_form"]["rate"].value;
@@ -82,6 +88,7 @@
         <pre>Monthly Contribution (Optional):  <input type="number" name="mc"></pre>
         <br><br>
         <input type="submit" value="Calculate">
+        <input type="reset" value="Reset" onclick="resetForm(this)">
     </form>
 
     <p id="output"/>
