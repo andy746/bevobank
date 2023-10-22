@@ -60,6 +60,26 @@ p{
     padding-left: 10px;
     font-weight: bold;
 }
+.bg {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+.bg .column {
+    flex: 33.33%;
+    padding: 5px;
+}
+.calculators {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+.calculators .column {
+    flex: 33.33%;
+    padding: 5px;
+}
 /*COMMENTS*/
 /*#2b6777*/
 /*c8d8e4*/
