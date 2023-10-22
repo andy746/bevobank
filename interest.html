@@ -6,31 +6,45 @@
     <link rel="stylesheet" href="styles.css">
     <title>BevoBank</title>
     <script type="text/javascript">
-        var p, r, t, n;
+        var p, r, t, n, m;
         var ans;
         var diff;
         var Simple;
+        var mc;
         function interestCalculation() {
             p = document.forms["input_form"]["principal"].value;
             r = document.forms["input_form"]["rate"].value;
             t = document.forms["input_form"]["time"].value;
             n = document.forms["input_form"]["num"].value;
+            m = document.forms["input_form"]["mc"].value;
             r = r / 100;
-            
             if (n == "" || n == null) {
                 Simple = true;
             }
             else {
                 Simple = false;
             }
-            if (p < 0 || r < 0 || t < 0 || n < 0) {
+
+            if (!(m == "" || m == null)) {
+                mc = true;
+            }
+            else {
+                mc = false;
+            }
+
+
+            if (p < 0 || r < 0 || t < 0 || n < 0 || m < 0) {
                 document.getElementById("output").style.color= 'red';
                 outputText = "Please enter only positive numbers! If you wish to calculate simple interest, leave the Times Compounded field blank.";
             }
-
-            else if (Simple == true) {
+            else if (Simple == true && mc == false) {
                 document.getElementById("output").style.color= 'black';
                 ans = p*r*t + parseInt(p);
+                diff = ans - p;
+                outputText = "You will have $" + ans.toFixed(2) + ". You gained $" + diff.toFixed(2) + " from interest!";
+            }
+            else if (mc == true) {
+                ans = (p*(1+(r/n))**(n*t)) + ((m*(1+(r/n))**(n*t)) - 1) / (r/n);
                 diff = ans - p;
                 outputText = "You will have $" + ans.toFixed(2) + ". You gained $" + diff.toFixed(2) + " from interest!";
             }
@@ -61,10 +75,11 @@
 	</header>
 	<h2 id="pageTitle">Interest Calculator</h2>
     <form name="input_form" action="javascript:interestCalculation();">
-        Principal: $<input type="number" name="principal" required>
-        Rate: %<input type="number" name="rate" required>
-        Time (Years): <input type="number" name="time" required>
-        Times Compounded (Optional): <input type="number" name="num">
+        <pre>Principal:                      $ <input type="number" name="principal" required></pre>
+        <pre>Rate:                           % <input type="number" name="rate" required></pre>
+        <pre>Time (Years):                     <input type="number" name="time" required></pre>
+        <pre>Times Compounded (Optional):      <input type="number" name="num"></pre>
+        <pre>Monthly Contribution (Optional):  <input type="number" name="mc"></pre>
         <br><br>
         <input type="submit" value="Calculate">
     </form>
