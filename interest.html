@@ -23,11 +23,11 @@
             else {
                 Simple = false;
             }
-            if (parseInt(p) < 0 || parseInt(r) < 0 || parseInt(t) < 0 || parseInt(n) < 0) {
+            if (p < 0 || r < 0 || t < 0 || n < 0) {
                 outputText = "Please enter only positive numbers! If you wish to calculate simple interest, leave the Times Compounded field blank.";
             }
 
-            if (Simple == true) {
+            else if (Simple == true) {
                 ans = p*r*t + parseInt(p);
                 diff = ans - p;
                 outputText = "You will have $" + ans.toFixed(2) + ". You gained $" + diff.toFixed(2) + " from interest!";
