@@ -24,15 +24,18 @@
                 Simple = false;
             }
             if (p < 0 || r < 0 || t < 0 || n < 0) {
+                document.getElementById("output").style.color= 'red';
                 outputText = "Please enter only positive numbers! If you wish to calculate simple interest, leave the Times Compounded field blank.";
             }
 
             else if (Simple == true) {
+                document.getElementById("output").style.color= 'black';
                 ans = p*r*t + parseInt(p);
                 diff = ans - p;
                 outputText = "You will have $" + ans.toFixed(2) + ". You gained $" + diff.toFixed(2) + " from interest!";
             }
             else {  
+                document.getElementById("output").style.color= 'black';
                 ans = p*(1+(r/n))**(n*t);
                 diff = ans - p;
                 outputText = "You will have $" + ans.toFixed(2) + ". You gained $" + diff.toFixed(2) + " from interest!";
